@@ -34,7 +34,7 @@ const newItem={
   title:this.state.item,
   date:this.state.date
 }
-
+console.log(newItem)
 const updatedItems =[...this.state.items,newItem]
 this.setState({
   items:updatedItems,
@@ -55,6 +55,7 @@ this.setState({
 
 handleEdit=id=>{
   const filteredItems = this.state.items.filter(item => item.id !== id)
+
   const selectedItem=this.state.items.find(item=>item.id===id)
   console.log(selectedItem)
   this.setState({

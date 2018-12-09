@@ -34,7 +34,7 @@ const newItem={
   title:this.state.item,
   date:this.state.date
 }
-
+console.log(newItem)
 const updatedItems =[...this.state.items,newItem]
 this.setState({
   items:updatedItems,
@@ -45,7 +45,11 @@ this.setState({
 })
 }
 
-
+clearList=()=>{
+  this.setState({
+    items:[]
+  })
+}
 handleDelete=(id)=>{
   const filteredItems=this.state.items.filter(item=>item.id!==id)
 this.setState({
@@ -55,6 +59,7 @@ this.setState({
 
 handleEdit=id=>{
   const filteredItems = this.state.items.filter(item => item.id !== id)
+
   const selectedItem=this.state.items.find(item=>item.id===id)
   console.log(selectedItem)
   this.setState({
@@ -69,7 +74,6 @@ handleEdit=id=>{
   render() {
     return (
 <div className="wrapper">
-      <SimpleStorage parent={this} />
       <h1 className="text-capitalize text-center">
       Todo List
       </h1>
