@@ -22,10 +22,7 @@ body:before {
   bottom: -5px;
   z-index: -1;
 }
-h1 {
-  font-family: "Roboto Slab", serif;
-  color: #dfe4ea;
-}
+
 .wrapper {
   margin-right: auto;
   margin-left: auto;
