@@ -16,17 +16,19 @@ const myStyle = {
 const miniSpace = {
   marginLeft:'5px',
 };
-export default class TodoItem extends Component {
+export default class TodoTask extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
-    const {title,date,handleDelete,handleEdit}=this.props;
     return <TableRow>
-        <TableCell>{title}</TableCell>
-        <TableCell>{date}</TableCell>
+        <TableCell>{this.props.title}</TableCell>
+        <TableCell>{this.props.date}</TableCell>
         <TableCell>
-          <Fab color="secondary" aria-label="Edit" style={myStyle} onClick={handleEdit}>
+          <Fab color="secondary" aria-label="Edit" style={myStyle} onClick={this.props.handleEdit}>
             <EditIcon fontSize="small">edit_icon</EditIcon>
           </Fab>
-          <IconButton onClick={handleDelete} aria-label="Delete" style={miniSpace}>
+          <IconButton onClick={this.props.handleDelete} aria-label="Delete" style={miniSpace}>
             <DeleteIcon fontSize="small" />
           </IconButton>
         </TableCell>

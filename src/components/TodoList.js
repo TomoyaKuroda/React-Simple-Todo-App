@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TodoItem from './TodoItem';
+import TodoTask from './TodoTask';
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -8,8 +8,11 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 
 export default class TodoList extends Component {
+  constructor(props) {
+    super(props);
+  }
+  
   render() {
-    const {tasks,handleDelete,handleEdit}=this.props
     return (
       <Paper>
         <Table>
@@ -22,14 +25,14 @@ export default class TodoList extends Component {
           </TableHead>
           <TableBody>
 {
-  tasks.map(item => {
+  this.props.tasks.map(item => {
     return(
-      <TodoItem 
+      <TodoTask 
       key={item.id} 
       title={item.title}
       date={item.date}
-      handleDelete={()=>handleDelete(item.id)}
-        handleEdit={() => handleEdit(item.id)}
+      handleDelete={()=>this.props.handleDelete(item.id)}
+      handleEdit={() => this.props.handleEdit(item.id)}
       />
     )
   })

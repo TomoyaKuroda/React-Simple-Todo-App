@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import TodoInput from './components/TodoInput';
 import TodoList from "./components/TodoList";
 import SimpleStorage from "react-simple-storage";
@@ -22,7 +22,6 @@ class App extends Component {
     this.handleDelete=this.handleDelete.bind(this)
     this.handleEdit=this.handleEdit.bind(this)
   }
-
 
   handleChangeTask=(e)=>{
     this.setState({
@@ -55,6 +54,7 @@ this.setState({
 
 
 handleDelete=(id)=>{
+  //return tasks which are not deleted
   const filteredTasks=this.state.tasks.filter(task=>task.id!==id)
 this.setState({
   tasks:filteredTasks
@@ -62,6 +62,7 @@ this.setState({
 }
 
 handleEdit=id=>{
+  //return tasks which are not deleted
   const filteredTasks = this.state.tasks.filter(task => task.id !== id)
   const selectedTask=this.state.tasks.find(task=>task.id===id)
   this.setState({
@@ -76,15 +77,17 @@ handleEdit=id=>{
   render() {
     return (
 <div className="wrapper">
+      {/*local storage*/}
       <SimpleStorage parent={this} />
       <img src={logo} alt="logo" className="center"/>
+      {/*input component*/}
       <TodoInput task={this.state.task} date={this.state.date} handleChangeTask={this.handleChangeTask}
       handleChangeDate={this.handleChangeDate}
       handleSubmit={this.handleSubmit}
       editTask={this.state.editTask}
       />
-      <TodoList tasks={this.state.tasks} handleDelete={this.handleDelete}
-              handleEdit={this.handleEdit}/>
+      {/*list component*/}
+      <TodoList tasks={this.state.tasks} handleDelete={this.handleDelete}  handleEdit={this.handleEdit}/>
       </div>
       
     );
