@@ -14,9 +14,6 @@ const saveStyle={
 }
 
 export default class TodoInput extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     const{task,date,handleChangeTask,handleChangeDate,handleSubmit,editTask}=this.props
     return (

@@ -17,9 +17,6 @@ const miniSpace = {
   marginLeft:'5px',
 };
 export default class TodoItem extends Component {
-    constructor(props) {
-    super(props);
-  }
   render() {
     const {title,date,handleDelete,handleEdit}=this.props;
     return <TableRow>

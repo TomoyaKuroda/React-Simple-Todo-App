@@ -8,9 +8,6 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 
 export default class TodoList extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     const {tasks,handleDelete,handleEdit}=this.props
     return (
