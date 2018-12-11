@@ -37,6 +37,7 @@ class App extends Component {
 
 handleSubmit=(e)=>{
 e.preventDefault();
+  if (this.state.date > new Date()){
 const newTask={
   id:this.state.id,
   title:this.state.task,
@@ -51,6 +52,11 @@ this.setState({
   id:uuid(),
   editTask:false
 })
+}else{
+  alert("Hey, the date is overdue!!");
+    console.log(new Date())
+    console.log(this.state.date)
+}
 }
 
 

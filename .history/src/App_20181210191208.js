@@ -77,7 +77,7 @@ handleEdit=id=>{
     return (
 <div className="wrapper">
       <SimpleStorage parent={this} />
-      <img src={logo} alt="logo" className="center"/>
+      <img src={logo} alt="logo" style={logoStyle}/>
       <TodoInput task={this.state.task} date={this.state.date} handleChangeTask={this.handleChangeTask}
       handleChangeDate={this.handleChangeDate}
       handleSubmit={this.handleSubmit}

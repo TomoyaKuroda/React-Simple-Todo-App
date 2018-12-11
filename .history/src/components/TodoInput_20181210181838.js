@@ -18,23 +18,24 @@ export default class TodoInput extends Component {
     super(props);
   }
   render() {
-    const{task,date,handleChangeTask,handleChangeDate,handleSubmit,editTask}=this.props
+    const{item,date,handleChangeItem,handleChangeDate,handleSubmit,editItem}=this.props
     return (
       <div className="card card-body my-3">
         <form onSubmit={handleSubmit}>
         <div className="input-group">
-        <TextField type="text" label="Task Name" margin="normal" required className="form-control text-capitalize"
+        <TextField type="text" label="Item Name" margin="normal" required className="form-control text-capitalize"
         placeholder="add a todo item"
-        value={task}
-        onChange={handleChangeTask}>
+        value={item}
+        onChange={handleChangeItem}>
             </TextField>
             <TextField style={space} type="date" label="Due Date" margin="normal" required InputLabelProps={{ shrink: true }} className="form-control"
+              placeholder="add a todo item"
               value={date}
               onChange={handleChangeDate}>
             </TextField>
             <Button variant="contained" size="small" margin="normal"  type="submit" value="Submit" style={saveStyle}>
-        {editTask? <EditIcon>edit_icon</EditIcon>: <SaveIcon />}
-        {editTask? 'Edit': 'Save'}
+        {editItem? <EditIcon>edit_icon</EditIcon>: <SaveIcon />}
+        {editItem? 'Edit': 'Save'}
         </Button>
         </div>
         </form>

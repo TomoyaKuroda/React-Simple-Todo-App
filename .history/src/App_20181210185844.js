@@ -5,7 +5,6 @@ import SimpleStorage from "react-simple-storage";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import uuid from 'uuid'
 import "./components/style.css";
-import logo from "./components/logo.png";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -17,10 +16,6 @@ class App extends Component {
     editTask:false
   }
     this.handleChangeTask = this.handleChangeTask.bind(this)
-    this.handleChangeDate=this.handleChangeDate.bind(this)
-    this.handleSubmit=this.handleSubmit.bind(this)
-    this.handleDelete=this.handleDelete.bind(this)
-    this.handleEdit=this.handleEdit.bind(this)
   }
 
 
@@ -77,13 +72,15 @@ handleEdit=id=>{
     return (
 <div className="wrapper">
       <SimpleStorage parent={this} />
-      <img src={logo} alt="logo" className="center"/>
+      <h1 className="text-capitalize text-center">
+      Todo List
+      </h1>
       <TodoInput task={this.state.task} date={this.state.date} handleChangeTask={this.handleChangeTask}
       handleChangeDate={this.handleChangeDate}
       handleSubmit={this.handleSubmit}
       editTask={this.state.editTask}
       />
-      <TodoList tasks={this.state.tasks} handleDelete={this.handleDelete}
+      <TodoList tasks={this.state.tasks} clearList={this.clearList} handleDelete={this.handleDelete}
               handleEdit={this.handleEdit}/>
       </div>
       

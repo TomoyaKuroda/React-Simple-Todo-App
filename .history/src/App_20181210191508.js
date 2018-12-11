@@ -30,6 +30,7 @@ class App extends Component {
     })
   }
     handleChangeDate=(e)=>{
+      if (e.target.value > new Date())
     this.setState({
       date: e.target.value
     })

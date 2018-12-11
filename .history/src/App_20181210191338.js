@@ -30,6 +30,7 @@ class App extends Component {
     })
   }
     handleChangeDate=(e)=>{
+      console.log(e.target.value)
     this.setState({
       date: e.target.value
     })

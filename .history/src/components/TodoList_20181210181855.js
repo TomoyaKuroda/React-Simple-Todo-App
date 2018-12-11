@@ -12,7 +12,7 @@ export default class TodoList extends Component {
     super(props);
   }
   render() {
-    const {tasks,handleDelete,handleEdit}=this.props
+    const {items,handleDelete,handleEdit}=this.props
     return (
       <Paper>
         <Table>
@@ -25,7 +25,7 @@ export default class TodoList extends Component {
           </TableHead>
           <TableBody>
 {
-  tasks.map(item => {
+  items.map(item => {
     return(
       <TodoItem 
       key={item.id} 
