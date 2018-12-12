@@ -23,18 +23,19 @@ class App extends Component {
     this.handleDelete=this.handleDelete.bind(this)
     this.handleEdit=this.handleEdit.bind(this)
   }
-
+//handle task change
 handleChangeTask=(e)=>{
   this.setState({
     task: e.target.value
   })
 }
+//handle date change
   handleChangeDate=(e)=>{
   this.setState({
     date: e.target.value
   })
 }
-
+//handle submit
 handleSubmit=(e)=>{
   e.preventDefault();
 const newTask={
@@ -47,7 +48,7 @@ const newTask={
   let difference = moment().diff(registeredDay, 'days');
   if (difference > 0)
   alert("It's overdue!!")
-  //add task if it's not overdue
+//add task if it's not overdue
   else{
 const updatedTasks =[...this.state.tasks,newTask]
 this.setState({
@@ -57,10 +58,10 @@ this.setState({
   id:uuid(),
   editTask:false
 })
-  }
+}
 }
 
-
+//handle delete
 handleDelete=(id)=>{
   //return tasks which are not deleted
   const filteredTasks=this.state.tasks.filter(task=>task.id!==id)
@@ -68,7 +69,7 @@ this.setState({
   tasks:filteredTasks
 })
 }
-
+//handle edit
 handleEdit=id=>{
   //return tasks which are not deleted
   const filteredTasks = this.state.tasks.filter(task => task.id !== id)

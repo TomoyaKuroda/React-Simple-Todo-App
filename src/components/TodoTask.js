@@ -25,6 +25,7 @@ export default class TodoTask extends Component {
         <TableCell>{this.props.title}</TableCell>
         <TableCell>{this.props.date}</TableCell>
         <TableCell>{
+          //hide edit button while editting
           this.props.editTask 
           ?
           ''
@@ -32,7 +33,6 @@ export default class TodoTask extends Component {
             <EditIcon fontSize="small">edit_icon</EditIcon>
           </Fab>
           }
-
           <IconButton onClick={this.props.handleDelete} aria-label="Delete" style={miniSpace}>
             <DeleteIcon fontSize="small" />
           </IconButton>
