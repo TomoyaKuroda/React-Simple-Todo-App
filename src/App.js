@@ -24,8 +24,6 @@ class App extends Component {
     this.handleEdit=this.handleEdit.bind(this)
   }
 
-
-
 handleChangeTask=(e)=>{
   this.setState({
     task: e.target.value

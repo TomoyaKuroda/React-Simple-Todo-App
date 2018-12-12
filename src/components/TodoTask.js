@@ -32,7 +32,6 @@ export default class TodoTask extends Component {
             <EditIcon fontSize="small">edit_icon</EditIcon>
           </Fab>
           }
-        
 
           <IconButton onClick={this.props.handleDelete} aria-label="Delete" style={miniSpace}>
             <DeleteIcon fontSize="small" />
