@@ -33,6 +33,7 @@ export default class TodoList extends Component {
       date={item.date}
       handleDelete={()=>this.props.handleDelete(item.id)}
       handleEdit={() => this.props.handleEdit(item.id)}
+      editTask={this.props.editTask}
       />
     )
   })

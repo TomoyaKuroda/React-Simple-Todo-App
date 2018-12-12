@@ -97,7 +97,7 @@ handleEdit=id=>{
       editTask={this.state.editTask}
       />
       {/*list component*/}
-      <TodoList tasks={this.state.tasks} handleDelete={this.handleDelete}  handleEdit={this.handleEdit}/>
+        <TodoList tasks={this.state.tasks} handleDelete={this.handleDelete} handleEdit={this.handleEdit} editTask={this.state.editTask}/>
       </div>
       
     );

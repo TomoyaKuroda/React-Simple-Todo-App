@@ -24,10 +24,16 @@ export default class TodoTask extends Component {
     return <TableRow>
         <TableCell>{this.props.title}</TableCell>
         <TableCell>{this.props.date}</TableCell>
-        <TableCell>
-          <Fab color="secondary" aria-label="Edit" style={myStyle} onClick={this.props.handleEdit}>
+        <TableCell>{
+          this.props.editTask 
+          ?
+          ''
+          : <Fab color="secondary" aria-label="Edit" style={myStyle} onClick={this.props.handleEdit}>
             <EditIcon fontSize="small">edit_icon</EditIcon>
           </Fab>
+          }
+        
+
           <IconButton onClick={this.props.handleDelete} aria-label="Delete" style={miniSpace}>
             <DeleteIcon fontSize="small" />
           </IconButton>
