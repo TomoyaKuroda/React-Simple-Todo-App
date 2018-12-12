@@ -4,6 +4,7 @@ import TodoList from "./components/TodoList";
 import SimpleStorage from "react-simple-storage";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import uuid from 'uuid'
+import moment from "moment";
 import "./components/style.css";
 import logo from "./components/logo.png";
 class App extends Component {
@@ -23,25 +24,33 @@ class App extends Component {
     this.handleEdit=this.handleEdit.bind(this)
   }
 
-  handleChangeTask=(e)=>{
-    this.setState({
-      task: e.target.value
-    })
-  }
-    handleChangeDate=(e)=>{
-    this.setState({
-      date: e.target.value
-    })
-  }
+
+
+handleChangeTask=(e)=>{
+  this.setState({
+    task: e.target.value
+  })
+}
+  handleChangeDate=(e)=>{
+  this.setState({
+    date: e.target.value
+  })
+}
 
 handleSubmit=(e)=>{
-e.preventDefault();
+  e.preventDefault();
 const newTask={
   id:this.state.id,
   title:this.state.task,
   date:this.state.date
 }
-
+//due date validation
+  let registeredDay = moment(this.state.date)
+  let difference = moment().diff(registeredDay, 'days');
+  if (difference > 0)
+  alert("It's overdue!!")
+  //add task if it's not overdue
+  else{
 const updatedTasks =[...this.state.tasks,newTask]
 this.setState({
   tasks:updatedTasks,
@@ -50,6 +59,7 @@ this.setState({
   id:uuid(),
   editTask:false
 })
+  }
 }
 
 
@@ -76,7 +86,7 @@ handleEdit=id=>{
 
   render() {
     return (
-<div className="wrapper">
+      <div className="wrapper">
       {/*local storage*/}
       <SimpleStorage parent={this} />
       <img src={logo} alt="logo" className="center"/>
