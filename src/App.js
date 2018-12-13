@@ -25,7 +25,7 @@ class App extends Component {
   }
 
 //handle submit
-handleSubmit=(e)=>{
+handleSubmit(e){
   e.preventDefault();
 const newTask={
   id:this.state.id,
@@ -50,19 +50,19 @@ this.setState({
 }
 }
 //handle task change
-handleChangeTask=(e)=>{
+handleChangeTask(e){
   this.setState({
     task: e.target.value
   })
 }
 //handle date change
-  handleChangeDate=(e)=>{
+  handleChangeDate(e){
   this.setState({
     date: e.target.value
   })
 }
 //handle delete
-handleDelete=(id)=>{
+handleDelete(id){
   //return tasks which are not deleted
   const filteredTasks=this.state.tasks.filter(task=>task.id!==id)
 this.setState({
@@ -70,7 +70,7 @@ this.setState({
 })
 }
 //handle edit
-handleEdit=id=>{
+handleEdit(id){
   //return tasks which are not deleted
   const filteredTasks = this.state.tasks.filter(task => task.id !== id)
   const selectedTask=this.state.tasks.find(task=>task.id===id)
