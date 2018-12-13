@@ -29,10 +29,10 @@ export default class TodoList extends Component {
     return(
       <TodoTask 
       key={item.id} 
-      title={item.title}
+      task={item.task}
       date={item.date}
-      handleDelete={()=>this.props.handleDelete(item.id)}
       handleEdit={() => this.props.handleEdit(item.id)}
+      handleDelete={()=>this.props.handleDelete(item.id)}
       editTask={this.props.editTask}
       />
     )

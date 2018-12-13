@@ -22,7 +22,7 @@ export default class TodoTask extends Component {
   }
   render() {
     return <TableRow>
-        <TableCell>{this.props.title}</TableCell>
+        <TableCell>{this.props.task}</TableCell>
         <TableCell>{this.props.date}</TableCell>
         <TableCell>{
           //hide edit button while editting

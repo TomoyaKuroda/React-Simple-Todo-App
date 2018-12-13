@@ -23,24 +23,13 @@ class App extends Component {
     this.handleDelete=this.handleDelete.bind(this)
     this.handleEdit=this.handleEdit.bind(this)
   }
-//handle task change
-handleChangeTask=(e)=>{
-  this.setState({
-    task: e.target.value
-  })
-}
-//handle date change
-  handleChangeDate=(e)=>{
-  this.setState({
-    date: e.target.value
-  })
-}
+
 //handle submit
 handleSubmit=(e)=>{
   e.preventDefault();
 const newTask={
   id:this.state.id,
-  title:this.state.task,
+  task:this.state.task,
   date:this.state.date
 }
 //due date validation
@@ -60,7 +49,18 @@ this.setState({
 })
 }
 }
-
+//handle task change
+handleChangeTask=(e)=>{
+  this.setState({
+    task: e.target.value
+  })
+}
+//handle date change
+  handleChangeDate=(e)=>{
+  this.setState({
+    date: e.target.value
+  })
+}
 //handle delete
 handleDelete=(id)=>{
   //return tasks which are not deleted
@@ -76,7 +76,7 @@ handleEdit=id=>{
   const selectedTask=this.state.tasks.find(task=>task.id===id)
   this.setState({
     tasks:filteredTasks,
-    task:selectedTask.title,
+    task:selectedTask.task,
     date:selectedTask.date,
     editTask:true,
     id:id
