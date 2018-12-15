@@ -1,3 +1,5 @@
+The live link is <a href="https://condescending-mccarthy-88aaab.netlify.com/>https://condescending-mccarthy-88aaab.netlify.com/</a>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

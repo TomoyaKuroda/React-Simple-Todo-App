@@ -18,7 +18,7 @@ export default class TodoInput extends Component {
   }
   render() {
     return (
-      <div className="card card-body my-3">
+      <div className="card card-body my-1">
         <form onSubmit={this.props.handleSubmit}>
         <div className="input-group">
         <TextField type="text" label="Task Name" margin="normal" required className="form-control text-capitalize"

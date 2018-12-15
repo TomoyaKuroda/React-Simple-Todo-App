@@ -7,6 +7,7 @@ import uuid from 'uuid'
 import moment from "moment";
 import "./components/style.css";
 import logo from "./components/logo.png";
+
 class App extends Component {
   constructor(props) {
     super(props);
