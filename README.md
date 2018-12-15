@@ -1,4 +1,4 @@
-The live link is <a href="https://condescending-mccarthy-88aaab.netlify.com/">https://condescending-mccarthy-88aaab.netlify.com/</a>
+The live link is <a href="https://condescending-mccarthy-88aaab.netlify.com/">https://condescending-mccarthy-88aaab.netlify.com/</a><br>
 This project has local storage function and input validation(e.g. overdue)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
