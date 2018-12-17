@@ -25,7 +25,7 @@ export default class TodoTask extends Component {
         <TableCell>{this.props.task}</TableCell>
         <TableCell>{this.props.date}</TableCell>
         <TableCell>{
-          //hide edit button while editting
+          //hide edit button in the list while editting
           !this.props.editTask && 
           <Fab color="secondary" aria-label="Edit" style={myStyle} onClick={this.props.handleEdit}>
             <EditIcon fontSize="small">edit_icon</EditIcon>

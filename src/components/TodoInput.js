@@ -28,11 +28,9 @@ export default class TodoInput extends Component {
             </TextField>
             <TextField style={space} type="date" label="Due Date" margin="normal" required InputLabelProps={{ shrink: true }} className="form-control"  value={this.props.date}  onChange={this.props.handleChangeDate}>
             </TextField>
-            <Button variant="contained" size="small" margin="normal" type="submit" value="Submit" style={saveStyle} color={
-              this.props.editTask ? "secondary" : "primary"
-          }>
+            <Button variant="contained" size="small" margin="normal" type="submit" value="Submit" style={saveStyle} color={this.props.editTask ? "secondary" : "primary"}>
         {/* toggle edit and save icon */}
-        {this.props.editTask? <EditIcon>edit_icon</EditIcon>: <SaveIcon />}
+        {this.props.editTask? <EditIcon />: <SaveIcon />}
         {this.props.editTask? 'Edit': 'Save'}
         </Button>
         </div>
